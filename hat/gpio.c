@@ -82,7 +82,7 @@ void write_pin(GPIO_TypeDef* GPIOx, uint8_t pin, PIN_VALUE value){
     return;
 }
 
-PIN_VALUE read_pin(GPIO_TypeDef* GPIOx, uint8_t pin){
+PIN_VALUE_t read_pin(GPIO_TypeDef* GPIOx, uint8_t pin){
     return (GPIOx->IDR >> pin) & 0x1;
 }
 

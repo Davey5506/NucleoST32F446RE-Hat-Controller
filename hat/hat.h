@@ -32,28 +32,28 @@ typedef struct{
     uint8_t SERVO_FEEDBACK_PIN;
 }SERVO_t;
 
-typedef enum{
+typedef enum {
+    LOW = 0U,
+    HIGH = 1U
+}PIN_VALUE_t;
+
+enum PIN_MODE{
     INPUT = 0U,
     OUTPUT = 1U,
     AF = 2U,
     ANALOG = 3U
-}PIN_MODE;
+};
 
-typedef enum{
+enum PIN_PULL{
     NO_PULL = 0U,
     PULL_UP = 1U,
     PULL_DOWN = 2U
-}PIN_PULL;
+};
 
-typedef enum{
+enum PIN_OUTPUT_TYPE{
     PUSH_PULL = 0U,
     OPEN_DRAIN = 1U
-}PIN_OUTPUT_TYPE;
-
-typedef enum{
-    LOW = 0U,
-    HIGH = 1U
-}PIN_VALUE;
+};
 
 extern const PMOD_t PMOD_A;
 extern const PMOD_t PMOD_B;
@@ -68,7 +68,7 @@ void set_pin_mode(GPIO_TypeDef* GPIOx, uint8_t pin, PIN_MODE mode);
 void set_pin_pull(GPIO_TypeDef* GPIOx, uint8_t pin, PIN_PULL pull);
 void set_output_type(GPIO_TypeDef* GPIOx, uint8_t pin, PIN_OUTPUT_TYPE type);
 void write_pin(GPIO_TypeDef* GPIOx, uint8_t pin, PIN_VALUE value);
-PIN_VALUE read_pin(GPIO_TypeDef* GPIOx, uint8_t pin);
+PIN_VALUE_t read_pin(GPIO_TypeDef* GPIOx, uint8_t pin);
 void toggle_pin(GPIO_TypeDef* GPIOx, uint8_t pin);
 
 // SysTick and Timer functions
