@@ -87,7 +87,6 @@ void init_usart(const uint32_t baudrate);
 void send_char(const char c);
 void send_string(const char* str);
 void init_ultrasound(void);
-void int_to_string(int num, char* str, uint16_t len);
 void init_servo(SERVO_t* servo);
 void init_adc(ADC_TypeDef* ADCx, uint8_t channel);
 void adc_swtstart(ADC_TypeDef* ADCx);
