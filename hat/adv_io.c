@@ -19,16 +19,16 @@ void init_usart(const uint32_t baudrate){
     return;
 }
 
-void send_char(USART_TypeDef* USARTx, const char c){
-    while(!(USARTx->SR & USART_SR_TXE));
-    USARTx->DR = c;
+void send_char(const char c){
+    while(!(USART2->SR & USART_SR_TXE));
+    USART2->DR = c;
     return;
 }
 
-void send_string(USART_TypeDef* USARTx, const char* str){
+void send_string(const char* str){
     int i = 0;
     while(str[i] != '\0'){
-        send_char(USARTx, str[i]);
+        send_char(str[i]);
         i++;
     }
     return;
