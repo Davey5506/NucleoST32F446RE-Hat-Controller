@@ -86,7 +86,6 @@ void display_num(uint16_t num, uint8_t decimal_place);
 void init_usart(const uint32_t baudrate);
 void send_char(const char c);
 void send_string(const char* str);
-void init_adc_interrupt(ADC_TypeDef* ADCx, uint8_t priority);
 void init_ultrasound(void);
 void int_to_string(int num, char* str, uint16_t len);
 void init_servo(SERVO_t* servo);
