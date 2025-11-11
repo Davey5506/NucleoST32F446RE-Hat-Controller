@@ -1,5 +1,5 @@
 # Hat Controller
-The Nucleo-F446RE Hat Contoller is an abstraction layer intended to be used with PlatformIO and the CMSIS framework for interfacing between the Nucleo-F446RE and a Hat designed for the University of Delaware's course on Microprocessor Systems.
+Hat Contoller is an abstraction layer intended to be used with PlatformIO and the CMSIS framework for interfacing between the Nucleo-F446RE and a Hat designed for the University of Delaware's course on Microprocessor Systems.
 ## Features of the Hat
 The Hat that is this project is designed around contains several integrated circuits and modules that are connect to the Nucleo-F446RE through its morpho header pins.<br>
 This library is able to:
