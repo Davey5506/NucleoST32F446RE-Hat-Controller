@@ -31,3 +31,5 @@ int main(void){
   return 0;
 }
 ```
+## License
+[AGPL-3.0 license](/LICENSE)
