@@ -2,6 +2,7 @@
 #define HAT_H
 
 #include "stm32f4xx.h"
+#include <stdbool.h>
 #define SYSTEM_FREQ 16000000U
 
 typedef struct{
@@ -74,8 +75,8 @@ void toggle_pin(GPIO_TypeDef* GPIOx, uint8_t pin);
 // SysTick and Timer functions
 void init_sys_tick(uint32_t ticks);
 void delay_us(uint32_t us);
-void init_adv_timer(TIM_TypeDef* TIMx, uint32_t freq, uint32_t arr, uint8_t cnt_enable, uint8_t pwm_enable);
-void init_gp_timer(TIM_TypeDef* TIMx, uint32_t freq, uint32_t arr, uint8_t enable);
+void init_adv_timer(TIM_TypeDef* TIMx, uint32_t freq, uint32_t arr, bool cnt_enable, bool pwm_enable);
+void init_gp_timer(TIM_TypeDef* TIMx, uint32_t freq, uint32_t arr, bool enable);
 void init_timer_IRQ(TIM_TypeDef* TIMx, uint16_t priority);
 
 // Seven Segment Display functions

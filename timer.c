@@ -20,7 +20,7 @@ void delay_us(uint32_t us){
     return;
 }
 
-void init_adv_timer(TIM_TypeDef* TIMx, uint32_t freq, uint32_t arr, uint8_t cnt_enable, uint8_t pwm_enable){
+void init_adv_timer(TIM_TypeDef* TIMx, uint32_t freq, uint32_t arr, bool cnt_enable, bool pwm_enable){
     if(TIMx->CR1 & TIM_CR1_CEN){
         return;
     }
@@ -43,7 +43,7 @@ void init_adv_timer(TIM_TypeDef* TIMx, uint32_t freq, uint32_t arr, uint8_t cnt_
     return;
 }
 
-void init_gp_timer(TIM_TypeDef* TIMx, uint32_t freq, uint32_t arr, uint8_t enable){
+void init_gp_timer(TIM_TypeDef* TIMx, uint32_t freq, uint32_t arr, bool enable){
     if(TIMx->CR1 & TIM_CR1_CEN){
         return;
     }
@@ -85,7 +85,9 @@ void init_gp_timer(TIM_TypeDef* TIMx, uint32_t freq, uint32_t arr, uint8_t enabl
     TIMx->PSC = (SYSTEM_FREQ / freq) - 1;
     TIMx->ARR = arr;
     TIMx->CNT = 0;
-    TIMx->CR1 |= (TIM_CR1_CEN & enable);
+    if(enable){
+        TIMx->CR1 |= TIM_CR1_CEN;
+    }
     return;
 }
 
