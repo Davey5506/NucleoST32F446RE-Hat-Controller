@@ -95,5 +95,5 @@ void init_adc_interrupt(ADC_TypeDef* ADCx, uint8_t priority);
 uint16_t read_adc(ADC_TypeDef* ADCx);
 
 // Utility functions
-uint32_t umap(uint32_t x, uint32_t in_min, uint32_t in_max, uint32_t out_min, uint32_t out_max);
+int32_t map(int32_t x, int32_t in_min, int32_t in_max, int32_t out_min, int32_t out_max);
 #endif //HAT_H
