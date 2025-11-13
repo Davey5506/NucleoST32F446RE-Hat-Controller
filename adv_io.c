@@ -48,9 +48,9 @@ void init_servo(SERVO_t* servo){
     init_gpio(servo->SERVO_PIN_PORT);
     set_pin_mode(servo->SERVO_PIN_PORT, servo->SERVO_PWM_PIN, AF);
     if (servo->SERVO_PWM_PIN >= 8) {
-        servo->SERVO_PIN_PORT->AFR[1] |= (3 << ((servo->SERVO_PWM_PIN - 8) * 4));
+        servo->SERVO_PIN_PORT->AFR[1] |= (2 << ((servo->SERVO_PWM_PIN - 8) * 4)); 
     } else {
-        servo->SERVO_PIN_PORT->AFR[0] |= (3 << (servo->SERVO_PWM_PIN * 4));
+        servo->SERVO_PIN_PORT->AFR[0] |= (2 << (servo->SERVO_PWM_PIN * 4));
     }
 }
 
