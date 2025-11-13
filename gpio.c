@@ -87,7 +87,7 @@ void write_pin(GPIO_TypeDef* GPIOx, uint8_t pin, enum PIN_VALUE value){
 }
 
 enum PIN_VALUE read_pin(GPIO_TypeDef* GPIOx, uint8_t pin){
-    if(pin > 15) return;
+    if(pin > 15) return PIN_ERROR;
     return (GPIOx->IDR >> pin) & 0x1;
 }
 

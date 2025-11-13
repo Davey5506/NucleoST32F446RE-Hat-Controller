@@ -35,7 +35,8 @@ typedef struct{
 
 enum PIN_VALUE{
     LOW = 0U,
-    HIGH = 1U
+    HIGH = 1U,
+    PIN_ERROR = 2U
 };
 
 enum PIN_MODE{
